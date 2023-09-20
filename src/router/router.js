@@ -4,11 +4,11 @@ const router = {}
 router.init = (req,res) => {
     if(req.url === "/api/post/get"){
         postHandler.getAllPost(req,res)
-    }
-
-    // silahkan tambahkan routing lain disini
-
-    else {
+    }else if(req.url=== "/api/comment/get"){
+        postHandler.getAllComment(req,res)
+    }else if(req.url=== "/api/post-comment/get"){
+        postHandler.getAllData(req,res)
+    }else {
         res.end("Not Found Route !")
     }
 }
